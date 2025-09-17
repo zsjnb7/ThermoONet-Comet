@@ -22,19 +22,51 @@ This repository contains three main components:
 ## GPU Support
 For optimal performance, install the PyTorch version that matches your GPU capabilities. Please refer to the [PyTorch official website](https://pytorch.org/) for installation instructions specific to your hardware.
 ## Usage
-## 1. Neural Network Architecture ([ThermoONet_architecture.py](Network/ThermoONet_architecture.py))
+### 1. Neural Network Architecture ([ThermoONet_architecture.py](Network/ThermoONet_architecture.py))
 This file contains the core neural network architecture including:
 * SELayer: Channel attention mechanism module
 * Branch1, Branch2, Branch3: Specialized branch networks
 * Branch: Main network that combines all branches
-## 2. 67P Benchmark Testing ([Test_ThermoONet_67P.ipynb](Test_67P/Test_ThermoONet_67P.ipynb))
+### 2. 67P Benchmark Testing ([Test_ThermoONet_67P.ipynb](Test_67P/Test_ThermoONet_67P.ipynb))
 Applies ThermoONet to comet 67P/Churyumov-Gerasimenko:
+```python
+# Load pre-trained model
+branch = torch.load("results/network_accurate.pkl")
 
+# Calculate water production rate
+gd_sol, tem = water_production([3.61079546e-03, 6.44077065e-03, 4.66889659e-02, 4.69151339e-02, 8.94414100e+00])
 
+# Plot results
+plot_water_production(gd_sol)
+plot_temperature_distribution(tem)
+```
+* Orbital data (solar_position.txt)
+* Shape model (cg-spc-shap8-v2.0-cheops-003k.ply)
+* Shadow data (shadow_67P_gai.pkl)
+* Water production observations (laeuteretal_prod.csv)
+### 3. Size Inversion for C/2002 Y1 ([Test_ThermoONet_2002Y1.ipynb](Test_size_2002Y1/Test_ThermoONet_2002Y1))
+Estimates nucleus size using SOHO/SWAN data and JPL data:
+```python
+# Initialize size calculator
+tab_files1 = 'water_c_2002_y1_juels_hovorcem.tab'
+tab_files2 = '2002_y1_juels_hovorcem.txt'
+Size_cal = Size_inverse(tab_files1, tab_files2)
 
-
-
-
+# Calculate size
+size = Size_cal.cal()
+print(f'Estimated nucleus size: {size}')
+```
+* Water production data (.tab files)
+* Orbital data from JPL (.txt files)
+## Applications
+### For Known Comets (e.g., 67P)
+1. Validation of thermophysical models
+2. Comparison with observational data
+3. Detailed study of activity patterns
+### For Unknown Comets
+1. Nucleus size estimation from water production data
+2. Physical parameter optimization through inverse modeling
+3. Comparative studies with large sample of comets
 
 
 

@@ -52,7 +52,7 @@ plot_temperature_distribution(tem)
 * Shape model (cg-spc-shap8-v2.0-cheops-003k.ply)
 * Shadow data (shadow_67P_gai.pkl)
 * Water production observations (laeuteretal_prod.csv)
-### 3. Size Inversion for C/2002 Y1 ([Test_ThermoONet_2002Y1.ipynb](Test_size_2002Y1/Test_ThermoONet_2002Y1))
+### 3. Size Inversion for C/2002 Y1 ([Test_ThermoONet_2002Y1.ipynb](Test_size_2002Y1/Test_ThermoONet_2002Y1.ipynb))
 Estimates nucleus size using SOHO/SWAN data and JPL data:
 ```python
 # Initialize size calculator

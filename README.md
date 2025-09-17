@@ -11,7 +11,7 @@ The model uses several physical parameters:
 * Icy area fraction
 * Thermal conductivity of dust mantle and dust-ice mixture
 * Density
-* specific heat capacity
+* Specific heat capacity
 * Spin angular velocity
 * Spin orientation ...
 ## Overview

@@ -75,11 +75,11 @@ print(f'Estimated nucleus size: {size}')
 1. Nucleus size estimation from water production data
 2. Physical parameter optimization through inverse modeling
 3. Comparative studies with large sample of comets
-## Note on Application
-The size inversion code is specifically designed for comet C/2002 Y1 (Juels-Holvorcem). When applying to other comets:  
-Modify input files accordingly;  
-Adjust the activity peak position in the class based on the water curve peak;  
-The annealing algorithm runs 30 cycles by default for balance between precision and computational time;  
+## Notes
+1. The code requires GPU acceleration for efficient computation
+2. File paths in the code need to be adjusted according to your local directory structure
+3. For different comets, adjust the activity peak position in the Size_inverse class
+4. The annealing algorithm runs 30 cycles by default for size inversion
 ## References
 This implementation is based on deep-learning-driven thermophysical modeling for cometary activity ([Zhao et al., 2025](https://doi.org/10.1051/0004-6361/202554703)).
 ## License

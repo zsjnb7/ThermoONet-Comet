@@ -27,7 +27,7 @@ This file contains the core neural network architecture including:
 * SELayer: Channel attention mechanism module
 * Branch1, Branch2, Branch3: Specialized branch networks
 * Branch: Main network that combines all branches
-## 2. 67P Benchmark Testing (Test_67P.py)
+## 2. 67P Benchmark Testing ([Test_67P.py](Test_67P/Test_ThermoONet_67P.py))
 Applies ThermoONet to comet 67P/Churyumov-Gerasimenko:
 
 

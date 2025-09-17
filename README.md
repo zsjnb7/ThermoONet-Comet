@@ -39,7 +39,7 @@ This file contains the core neural network architecture including:
 Applies ThermoONet to comet 67P/Churyumov-Gerasimenko:
 ```python
 # Load pre-trained model
-branch = torch.load("results/network_accurate.pkl")
+branch = torch.load("Network/network_accurate.pkl")
 
 # Calculate water production rate
 gd_sol, tem = water_production([3.61079546e-03, 6.44077065e-03, 4.66889659e-02, 4.69151339e-02, 8.94414100e+00])

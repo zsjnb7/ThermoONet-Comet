@@ -77,9 +77,9 @@ print(f'Estimated nucleus size: {size}')
 3. Comparative studies with large sample of comets
 ## Note on Application
 The size inversion code is specifically designed for comet C/2002 Y1 (Juels-Holvorcem). When applying to other comets:  
-Modify input files accordingly  
-Adjust the activity peak position in the class based on the water curve peak  
-The annealing algorithm runs 30 cycles by default for balance between precision and computational time  
+Modify input files accordingly;  
+Adjust the activity peak position in the class based on the water curve peak;  
+The annealing algorithm runs 30 cycles by default for balance between precision and computational time;  
 ## References
 This implementation is based on deep-learning-driven thermophysical modeling for cometary activity ([Zhao et al., 2025](https://doi.org/10.1051/0004-6361/202554703)).
 ## License

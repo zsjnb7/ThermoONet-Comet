@@ -5,6 +5,15 @@ ThermoONet is a PyTorch-based deep learning framework designed for cometary ther
 * **Size Inversion**: Estimates nucleus size of comets using water production data from observations
 * **Custom Architecture**: Implements channel attention mechanisms and branch networks for specialized feature processing
 * **Multi-branch Design**: Processes different types of input parameters through specialized network branches
+## Some key Physical Parameters
+The model uses several physical parameters:
+* Dust mantle thickness
+* Icy area fraction
+* Thermal conductivity of dust mantle and dust-ice mixture
+* Density
+* specific heat capacity
+* Spin angular velocity
+* Spin orientation ...
 ## Overview
 This repository contains three main components:
 1. **ThermoONet Architecture**: The modified deep operator neural network architecture with channel attention mechanisms
@@ -17,8 +26,7 @@ This repository contains three main components:
 * SciPy
 * Matplotlib
 * pandas
-* plyfile 
-...
+* plyfile ...
 ## GPU Support
 For optimal performance, install the PyTorch version that matches your GPU capabilities. Please refer to the [PyTorch official website](https://pytorch.org/) for installation instructions specific to your hardware.
 ## Usage
@@ -67,6 +75,16 @@ print(f'Estimated nucleus size: {size}')
 1. Nucleus size estimation from water production data
 2. Physical parameter optimization through inverse modeling
 3. Comparative studies with large sample of comets
-
+## Note on Application
+The size inversion code is specifically designed for comet C/2002 Y1 (Juels-Holvorcem). When applying to other comets:  
+Modify input files accordingly  
+Adjust the activity peak position in the class based on the water curve peak  
+The annealing algorithm runs 30 cycles by default for balance between precision and computational time  
+## References
+This implementation is based on deep-learning-driven thermophysical modeling for cometary activity ([Zhao et al., 2025](https://doi.org/10.1051/0004-6361/202554703)).
+## License
+This project is for research purposes. Please cite appropriate references if using this code in publications.
+## Contact
+For questions regarding this implementation, please open an issue in the GitHub repository.
 
 

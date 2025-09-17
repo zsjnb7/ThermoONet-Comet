@@ -31,6 +31,7 @@ This repository contains three main components:
 For optimal performance, install the PyTorch version that matches your GPU capabilities. Please refer to the [PyTorch official website](https://pytorch.org/) for installation instructions specific to your hardware.
 ## Usage
 ### 1. Neural Network Architecture ([ThermoONet_architecture.py](Network/ThermoONet_architecture.py))
+[Neural Network Architecture](images/image.png)
 This file contains the core neural network architecture including:
 * SELayer: Channel attention mechanism module
 * Branch1, Branch2, Branch3: Specialized branch networks

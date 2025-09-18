@@ -30,7 +30,7 @@ This repository contains three main components:
 ## GPU Support
 For optimal performance, install the PyTorch version that matches your GPU capabilities. Please refer to the [PyTorch official website](https://pytorch.org/) for installation instructions specific to your hardware.
 ## Usage
-### Data
+### Data ([Dataset](Dataset))
 This file contains train, test and validation dataset. After decompression, the data can be read using the following code format:
 ```python
 data = []

@@ -51,9 +51,10 @@ for file in pkl_files:
 ### 1. Neural Network Architecture ([ThermoONet_architecture.py](Network/ThermoONet_architecture.py))  
 ![Neural Network Architecture](images/image.png)  
 This file contains the core neural network architecture including:
-* SELayer: Channel attention mechanism module
-* Branch1, Branch2, Branch3: Specialized branch networks
-* Branch: Main network that combines all branches
+* ```SELayer```: Channel attention mechanism module
+* ```Branch1```, ```Branch2```, ```Branch3```: Specialized branch networks
+* ```Branch```: Main network that combines all branches  
+(It is advised to copy the main source code of the neural network into the directories of the two application projects where their main code resides)
 ### 2. 67P Benchmark Testing ([Test_ThermoONet_67P.ipynb](Test_67P/Test_ThermoONet_67P.ipynb))
 Applies ThermoONet to comet 67P/Churyumov-Gerasimenko:
 ```python
@@ -68,10 +69,10 @@ plot_water_production(gd_sol)
 plot_temperature_distribution(tem)
 ```
 (After decompression, the shadow test for 67P in the ```Shadow_67P``` folder must be placed in the same directory as the main code)
-* Orbital data (solar_position.txt)
-* Shape model (cg-spc-shap8-v2.0-cheops-003k.ply)
-* Shadow data (shadow_67P_gai.pkl)
-* Water production observations (laeuteretal_prod.csv)
+* Orbital data (```solar_position.txt```)
+* Shape model (```cg-spc-shap8-v2.0-cheops-003k.ply```)
+* Shadow data (```shadow_67P_gai.pkl```)
+* Water production observations (```laeuteretal_prod.csv```)
 ### 3. Size Inversion for C/2002 Y1 ([Test_ThermoONet_2002Y1.ipynb](Test_size_2002Y1/Test_ThermoONet_2002Y1.ipynb))
 Estimates nucleus size using SOHO/SWAN data and JPL data:
 ```python
@@ -84,8 +85,8 @@ Size_cal = Size_inverse(tab_files1, tab_files2)
 size = Size_cal.cal()
 print(f'Estimated nucleus size: {size}')
 ```
-* Water production data (.tab files)
-* Orbital data from JPL (.txt files)
+* Water production data (```.tab files```)
+* Orbital data from JPL (```.txt files```)
 ## Applications
 ### For Known Comets (e.g., 67P)
 1. Validation of thermophysical models

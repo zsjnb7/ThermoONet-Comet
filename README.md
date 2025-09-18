@@ -1,5 +1,5 @@
 # ThermoONet_Comet: A Deep Learning Framework for Cometary Thermophysical Modeling and Parameter Inversion
-ThermoONet is a PyTorch-based deep learning framework designed for cometary thermophysical modeling and parameter inversion. It uses a modified deep operator neural network architecture with channel attention mechanisms to model the thermal behavior of comet nuclei and estimate physical parameters from observational data.
+ThermoONet_Comet is a PyTorch-based deep learning framework designed for cometary thermophysical modeling and parameter inversion. It uses a modified deep operator neural network architecture with channel attention mechanisms to model the thermal behavior of comet nuclei and estimate physical parameters from observational data.
 ## Features
 * **Thermophysical Modeling**: Predicts subsurface temperature distributions and water production rates for cometary nuclei
 * **Size Inversion**: Estimates nucleus size of comets using water production data from observations
@@ -108,5 +108,7 @@ This implementation is based on deep-learning-driven thermophysical modeling for
 This project is for research purposes. Please cite appropriate references if using this code in publications.
 ## Contact
 For questions regarding this implementation, please open an issue in the GitHub repository.
+## Additional Component
+We have also developed a neural network specifically for asteroid thermophysics. If interested, please navigate to [ThermoONet_Asteroid](https://github.com/zsjnb7/DeepONet-for-asteroids-temperature.git).
 
 

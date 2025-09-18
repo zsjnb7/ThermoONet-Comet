@@ -67,6 +67,7 @@ gd_sol, tem = water_production([3.61079546e-03, 6.44077065e-03, 4.66889659e-02, 
 plot_water_production(gd_sol)
 plot_temperature_distribution(tem)
 ```
+(After decompression, the shadow test for 67P in the ```Shadow_67P``` folder must be placed in the same directory as the main code)
 * Orbital data (solar_position.txt)
 * Shape model (cg-spc-shap8-v2.0-cheops-003k.ply)
 * Shadow data (shadow_67P_gai.pkl)

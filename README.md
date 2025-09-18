@@ -10,7 +10,7 @@ The model uses several physical parameters:
 * Dust mantle thickness
 * Icy area fraction
 * Thermal conductivity of dust mantle and dust-ice mixture
-* Density
+* Surface density
 * Specific heat capacity
 * Spin angular velocity
 * Spin orientation ...
@@ -23,7 +23,7 @@ This repository contains three main components:
 * Python 3.8+
 * PyTorch (GPU version recommended)
 * NumPy
-* SciPy
+* SciPy (advised 1.11.3, for correctly reading .pkl)
 * Matplotlib
 * pandas
 * plyfile ...

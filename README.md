@@ -32,7 +32,18 @@ For optimal performance, install the PyTorch version that matches your GPU capab
 ## Usage
 ### Data
 This file contains train, test and validation dataset:
-* train_dataset: 
+* train_dataset: the dataset used for training the network. After decompression, the data can be read using the following code format:
+```python
+data = []
+folder_path = f'train_dataset/sigmoid4_0'
+pkl_files = [f for f in os.listdir(folder_path) if f.endswith('.pkl')]
+for file in pkl_files:
+    with open(os.path.join(folder_path, file), 'rb') as f:
+        data_mid = pickle.load(f)
+        data_mid = [x for x in data_mid if x is not None]
+        data.append(data_mid)
+```
+After combining all data, a batchsize*10 array can be obtained, representing the radiative flux function, subsurface temperature function, and 8 key physical parameters (corresponding to $p_1$-$p_8$ in the network card).
 ### 1. Neural Network Architecture ([ThermoONet_architecture.py](Network/ThermoONet_architecture.py))  
 ![Neural Network Architecture](images/image.png)  
 This file contains the core neural network architecture including:

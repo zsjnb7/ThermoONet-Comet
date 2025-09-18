@@ -31,19 +31,23 @@ This repository contains three main components:
 For optimal performance, install the PyTorch version that matches your GPU capabilities. Please refer to the [PyTorch official website](https://pytorch.org/) for installation instructions specific to your hardware.
 ## Usage
 ### Data
-This file contains train, test and validation dataset:
-* train_dataset: the dataset used for training the network. After decompression, the data can be read using the following code format:
+This file contains train, test and validation dataset. After decompression, the data can be read using the following code format:
 ```python
 data = []
-folder_path = f'train_dataset/sigmoid4_0'
+folder_path = f'path'
 pkl_files = [f for f in os.listdir(folder_path) if f.endswith('.pkl')]
 for file in pkl_files:
-    with open(os.path.join(folder_path, file), 'rb') as f:
-        data_mid = pickle.load(f)
-        data_mid = [x for x in data_mid if x is not None]
-        data.append(data_mid)
+  with open(os.path.join(folder_path, file), 'rb') as f:
+      data_mid = pickle.load(f)
+      data_mid = [x for x in data_mid if x is not None]
+      data.append(data_mid)
 ```
-After combining all data, a batchsize*10 array can be obtained, representing the radiative flux function, subsurface temperature function, and 8 key physical parameters (corresponding to $p_1$-$p_8$ in the network card).
+* **train_dataset**: the dataset used for training the network  
+  After combining all data, a batchsize*10 array can be obtained, representing the radiation flux function, subsurface temperature function, and 8 key physical parameters corresponding to $p_1-p_8$ in the following network model card
+* **test_dataset**: the dataset for tuning network hyperparameters  
+  It consists of 6 folders, representing the functions of subsurface temperature distribution of a spherical comet with respect to the obliquity of the spin axis and the heliocentric distance, under different dust mantle thickness and icy area fraction. For details, please refer to [Zhao et al. (2025)](https://doi.org/10.1051/0004-6361/202554703)
+* **validation_dataset**: Dataset for evaluating network performance in real comet studies  
+  It consists of 3 folders, representing the subsurface temperature distribution of 67P/Churyumov-Gerasimenko under different combinations of dust mantle thickness and icy area fraction at various orbital phases. For details, please also refer to [Zhao et al. (2025)](https://doi.org/10.1051/0004-6361/202554703)
 ### 1. Neural Network Architecture ([ThermoONet_architecture.py](Network/ThermoONet_architecture.py))  
 ![Neural Network Architecture](images/image.png)  
 This file contains the core neural network architecture including:

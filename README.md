@@ -53,7 +53,8 @@ for file in pkl_files:
 This file contains the core neural network architecture including:
 * ```SELayer```: Channel attention mechanism module
 * ```Branch1```, ```Branch2```, ```Branch3```: Specialized branch networks
-* ```Branch```: Main network that combines all branches  
+* ```Branch```: Main network that combines all branches
+
 (It is advised to copy the main source code of the neural network into the directories of the two application projects where their main code resides)
 ### 2. 67P Benchmark Testing ([Test_ThermoONet_67P.ipynb](Test_67P/Test_ThermoONet_67P.ipynb))
 Applies ThermoONet to comet 67P/Churyumov-Gerasimenko:

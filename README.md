@@ -109,6 +109,6 @@ This project is for research purposes. Please cite appropriate references if usi
 ## Contact
 For questions regarding this implementation, please open an issue in the GitHub repository.
 ## Additional Component
-We have also developed a neural network specifically for asteroid thermophysics. If interested, please navigate to [ThermoONet_Asteroid](https://github.com/zsjnb7/DeepONet-for-asteroids-temperature.git).
+We have also developed a neural network specifically for asteroid thermophysics. If interested, please navigate to [ThermoONet_Asteroid](https://github.com/zsjnb7/ThermoONet-Asteroid.git).
 
 

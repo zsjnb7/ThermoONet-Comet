@@ -74,8 +74,8 @@ plot_temperature_distribution(tem)
 * Shape model (```cg-spc-shap8-v2.0-cheops-003k.ply```)
 * Shadow data (```shadow_67P_gai.pkl```)
 * Water production observations (```laeuteretal_prod.csv```)
-### 3. Size Inversion for C/2002 Y1 ([Test_ThermoONet_2002Y1.ipynb](Test_size_2002Y1/Test_ThermoONet_2002Y1.ipynb))
-Estimates nucleus size using SOHO/SWAN data and JPL data:
+### 3. Size Inversion for C/2002 Y1 ([Test_ThermoONet_2002Y1](Test_size_2002Y1)
+Estimates nucleus size using SOHO/SWAN data and JPL data. The file includes two inversion sizing methods, [one](Test_size_2002Y1/Test_ThermoONet_2002Y1.ipynb) obtains optimized solutions through multiple simulated annealing runs and takes their average; [the other](Test_size_2002Y1/Test_ThermoONet_2002Y1_ru.ipynb) uses a single simulated annealing run, selects solutions with small observation errors for statistics, and computes their average. In terms of computational speed, we recommend the latter.
 ```python
 # Initialize size calculator
 tab_files1 = 'water_c_2002_y1_juels_hovorcem.tab'
@@ -83,8 +83,11 @@ tab_files2 = '2002_y1_juels_hovorcem.txt'
 Size_cal = Size_inverse(tab_files1, tab_files2)
 
 # Calculate size
+# One
 size = Size_cal.cal()
 print(f'Estimated nucleus size: {size}')
+# Two
+loss_list_ori, size_list_ori = Size_cal.cal()
 ```
 * Water production data (```.tab files```)
 * Orbital data from JPL (```.txt files```)
@@ -101,7 +104,6 @@ print(f'Estimated nucleus size: {size}')
 1. The code requires GPU acceleration for efficient computation
 2. File paths in the code need to be adjusted according to your local directory structure
 3. For different comets, adjust the activity peak position in the Size_inverse class
-4. The annealing algorithm runs 30 cycles by default for size inversion
 ## References
 This implementation is based on deep-learning-driven thermophysical modeling for cometary activity ([Zhao et al., 2025](https://doi.org/10.1051/0004-6361/202554703)).
 ## License

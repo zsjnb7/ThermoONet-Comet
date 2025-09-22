@@ -74,7 +74,7 @@ plot_temperature_distribution(tem)
 * Shape model (```cg-spc-shap8-v2.0-cheops-003k.ply```)
 * Shadow data (```shadow_67P_gai.pkl```)
 * Water production observations (```laeuteretal_prod.csv```)
-### 3. Size Inversion for C/2002 Y1 ([Test_ThermoONet_2002Y1](Test_size_2002Y1)
+### 3. Size Inversion for C/2002 Y1 ([Test_ThermoONet_2002Y1](Test_size_2002Y1))
 Estimates nucleus size using SOHO/SWAN data and JPL data. The file includes two inversion sizing methods, [one](Test_size_2002Y1/Test_ThermoONet_2002Y1.ipynb) obtains optimized solutions through multiple simulated annealing runs and takes their average; [the other](Test_size_2002Y1/Test_ThermoONet_2002Y1_ru.ipynb) uses a single simulated annealing run, selects solutions with small observation errors for statistics, and computes their average. In terms of computational speed, we recommend the latter.
 ```python
 # Initialize size calculator
